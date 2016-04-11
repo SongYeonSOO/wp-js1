@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var str = "Hello, I'm a string!";
+	console.log("문자열 길이는 : " + str.length);
+
+	for (var i = 0; i < str.length; i++) {
+		console.log(str[i]);
+	}
+
+	var s1 = "number" + 5;
+	console.log(s1);
+
+	var n = 5 + "5";
+	console.log(n);
+
+	var n1 = "5" + 5;
+	console.log(n1);
+
+	var n2 = parseInt("5", 10) + 5;
+	console.log(n2);
+
+	var str = "String1 String2 String3";
+	console.log(str.indexOf("String2"));
+
+	var str2 = str.substr(8);
+	console.log(str2);
+
+	//startindex, count
+	var str3 = str.substr(8, 14);
+	console.log(str3);
+
+	//startindex, lastindex-1
+	var str4 = str.substring(8, 14);
+	console.log(str4);
+
+	//공백을 기준으로 나눠서 a 배열로 만들자
+	var a = str.split(' ');
+	console.log(a);
+
+	var html = "<h3>Here's a headline!</h3>";
+	console.log(escape(html));
+
+	//1. 전역함수를 만들어서 사용하는 방법
+	var escapeHTML = function(str) {
+		return str.replace("<", "&gt;");
+	}
+
+	//2. String 객체의 prototype을 확장하는 방법
+	String.prototype.escapeHTML = function() {
+		//	this.replace("<","&gt;");
+		return this.replace(/>/g, "&gt;").replace(/</g, "&lt;");
+	}
+
+	//element를 다 그려진 다음에 가져와야 실행가능함
+	var onLoaded = function() {
+		//html실행되는걸 볼 수 있다
+
+		
+			//html이 그대로 body부분에 들어갔다고 생각하면된다.<h3>가 먹는 상태
+		//document.getElementById("myDiv").innerHTML= html;
+
+		//<,>를 lt/gt로 나타내고 싶은 것임. 함수 안에서 <>를 replace시킨것임
+		//&lt, &gt를 문자로 인식하게됨
+		// <h3>hello</h3>와 &lth3&gthello&gt/h3&gt 는 다르다
+		// 이 &lt, &gt를 그냥 표현하고 싶으면 escapse를 이용하도록한다.
+		
+			//화면에 tag 값을 UTF-8 code로 만든다
+		//document.getElementById("myDiv").innerHTML= escapeHTML(html);
+		
+		document.getElementById("myDiv").innerHTML = html.escapeHTML();
+
+	}
+</script>
+</head>
+
+<!-- body를 다 그린 다음에 실행할 수 있는 함수 : onLoaded() -->
+<body onload="onLoaded();">
+	<div id="myDiv"></div>
+	<h1>1&gt;100==true&amp;&amp; 100 &lt; 200</h1>
+</body>
+</html>

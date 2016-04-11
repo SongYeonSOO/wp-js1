@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script>
+var i =10;
+var employee = {};
+employee.name ="YS";
+employee.age = 20;
+employee.showInfo = function(){
+	
+	console.log(this.name+":"+this.age);
+	
+}
+
+employee.showInfo();
+
+//JSON 표기법이용
+var employee1 = {
+		name:"YS1",
+		age:20,
+		showInfo:function(){
+			console.log(this.name+":"+this.age);
+		}
+		
+}
+
+employee1.showInfo();
+
+console.log(employee);
+console.log(employee1);
+
+</script>
+
+<body>
+
+</body>
+</html>

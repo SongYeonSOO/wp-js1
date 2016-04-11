@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+
+//METHOD 1 
+//parameter를 쭉 쓰고 마지막에 본문의 내용을 쓰면된다.
+var f= new Function("a","b","return a+b");
+
+//METHOD 2
+function f2(a,b){
+	var sum= a+b;
+	return sum;
+}
+
+//METHOD 3
+var f3 = function(a,b){
+	var sum= a+b;
+	return sum;
+}
+
+
+console.log(f(10,20)); // PRINT 30
+console.log(f2(10,20)); // PRINT 30
+console.log(f3(10,20)); // PRINT 30
+
+</script>
+<body>
+
+</body>
+</html>

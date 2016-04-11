@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var number = 5;
+	var anotherNumber = new Number(5);
+	var pi = 3.14;
+	var string = "Hello, I'm a string!";
+	var anotherString = new String("Hello, I'm a string!");
+	var used = false;
+	var u;
+	var n = null;
+
+	if (u == null) {
+		alert("null!!!!");
+	}
+	//casting 시켜서 비교 -> 이건 실행됨
+	if (2 == "2") {
+		alert("2 equal");
+	}
+	//type도 비교 -> 이건 실행안됨(다른 type에 대해 실행할 땐 이걸 이용하는 게 맞겠지?)
+	if (2 === "2") {
+		alert("3 equal");
+	}
+	console.log(number + ":" + typeof number);
+	console.log(anotherNumber + ":" + typeof anotherNumber);
+	console.log(pi + ":" + typeof pi);
+	console.log(string + ":" + typeof string);
+	console.log(anotherString + ":" + typeof anotherString);
+	console.log(used + ":" + typeof used);
+	console.log(u + ":" + typeof u);
+	console.log(n + ":" + typeof n);
+
+	/*
+
+	 여섯가지 TYPE이 있다. (이걸 벗어나지 않음)
+	 object -- 우리가 만드는 객체는 OBJECT로 표현함
+	 number
+	 string
+	 boolean
+	 undefined
+	 function
+	
+	 */
+
+	var f = function() {
+		this.a = 10;
+	}
+
+	console.log(f + ":" + typeof f);
+	var myf = new f();
+	console.log(myf+":"+myf);
+	console.log(myf.a);
+	console.log(myf);
+	
+	//여기 정리해야해!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	//객체를 한번만 쓰고 말때는 이처럼 쓴다.	
+	var f2 = function() {
+		a : 10;
+	}
+
+	console.log(f2+":"+f2);
+	console.log(f2);
+
+	var myf2 = new f2();
+	console.log(myf2+":"+myf2);
+	console.log(myf2.a);
+	console.log(myf2);
+	
+	//alert( typeof number)
+	//alert( typeof anotherNumber + ":" + ( anotherNumber + 10 ) );
+	//alert( typeof pi )
+	//alert( typeof string )
+	//alert( typeof anotherString )
+	//alert( typeof used )
+
+	//한번에 선언가능?
+	//myVar: undefined, myVar2: null
+	//-> 한번에 선언 불가능인거네;
+	
+	var myVar, myVar2 = null;
+	
+	
+	console.log(myVar+":"+ typeof myVar);
+	console.log(myVar2+":"+ typeof myVar2);
+	
+	console.log(myVar+":"+myVar2);
+	
+	if (myVar == myVar2) {
+		console.log("2 equal");
+
+	}
+	if (myVar === myVar2) {
+		console.log("3 equal");
+
+	}
+	console.log( myVar + ", " + myVar2 );
+	console.log( myVar == myVar2 ); // true
+	console.log( myVar === myVar2 ); // false
+	
+	var myNumber= 10;
+	var myString ="10";
+	console.log(myNumber == parseInt(myString, 10));
+</script>
+</head>
+<body>
+
+</body>
+</html>
